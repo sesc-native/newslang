@@ -6,4 +6,7 @@ authenticated :user do
   devise_scope :user do
     root 'devise/sessions#new'
   end
+  
+  resources :authentications, only: [:destroy]
+  
 end

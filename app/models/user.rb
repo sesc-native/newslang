@@ -12,4 +12,15 @@ def self.from_omniauth(auth)
   end
 end
 
+def apply_omniauth(auth)
+  update_attributes(
+    provider: auth.provider,
+    uid: auth.uid
+  )
+end
+
+def has_facebook_linked?
+  self.provider.present? && self.uid.present?
+end
+
 end
