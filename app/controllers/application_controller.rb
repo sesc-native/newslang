@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
-    def helloo
-    render html: "hello, world!"
-    end
+  before_action :authenticate_user!
   
 end
