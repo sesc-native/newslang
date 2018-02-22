@@ -14,11 +14,13 @@ gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'devise'
+gem 'bootstrap-sass', '3.3.7'
 
 # User Authentication with Facebook
 gem 'omniauth-facebook'
 # Development ENV Variables
 gem 'figaro'
+gem 'httparty'
 
 
 group :development, :test do

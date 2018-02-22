@@ -1,0 +1,38 @@
+    <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Newslang", 'home', id: "logo" %></li>
+      <li> 
+          <div class="btn-group" role="group" aria-label="...">
+              <%= link_to "EN", newsapi_path(:lang => "en"), class: "btn btn-default" %>
+              <%= link_to "ES", newsapi_path(:lang => "es"), class: "btn btn-default" %>
+              <%= link_to "FR", newsapi_path(:lang => "fr"), class: "btn btn-default" %>
+        </div>
+        
+      </li>
+      
+      <li>
+        <div>
+        <%= form_tag newsapi_path, method: "get", class: "form-inline" do %>
+        <%= text_field_tag :topic, nil, class: "form-control", placeholder: "Search topic" %>
+        <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+        <% end %>
+        </div>  
+      </li>
+
+      
+      <% if user_signed_in? %>
+      <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+      <li><<%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+      <% else %>
+      <li><%= link_to "Sign up", new_user_registration_path  %></li>
+      <li><%= link_to "Login", new_user_session_path  %></li>
+      <% end %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      </ul>
+    </nav>
+    
+    </div>
+    </header>
