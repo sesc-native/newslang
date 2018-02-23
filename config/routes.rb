@@ -9,4 +9,9 @@ authenticated :user do
   
   resources :authentications, only: [:destroy]
   
+  get 'home', to: 'home#index'
+  get 'users/home', to: 'home#index'
+  
+  get 'newsapi', to: 'home#index'
+  
 end
